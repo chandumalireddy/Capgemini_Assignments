@@ -1,0 +1,123 @@
+package stream;
+import java.io.IOException;
+
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.List;
+import java.util.stream.Collectors;
+
+
+		
+public class fruit {
+		private String name;
+		private int calories;
+		private int price;
+		private String color;
+		public fruit(String name,int calories,int price,String color)
+		{
+			this.name=name;
+			this.calories=calories;
+			this.price=price;
+			this.color=color;
+		}
+		public String getname()
+		{
+			return name;
+		}
+		public int getcalories()
+		{
+			return calories;
+		}
+		
+		public int getprice()
+		{
+			return price;
+		}
+		
+		public String getcolor()
+		{
+			return color;
+		}
+		 public String toString() {
+	            return "User{" +
+	                    "name='" + name + '\'' +
+	                    ", age=" + calories +" "+price+" "+color+
+	                    '}';
+	        }
+		
+		}
+		
+			
+		
+public class assignment {
+
+  
+    	
+    public static void reverseSort(List<fruit> p) {
+    	
+    	
+    	p.stream()  
+      .filter(a->a.getcalories()<100)
+    	.sorted((o1,o2)->(o2.getcalories()>(o1.getcalories())?1:-1))
+        .forEach(a->System.out.println(a.getname()+" "+a.getcalories()+" "+a.getcolor()+" "+a.getprice()));
+    	
+    }
+    public static  ArrayList<fruit> sort(List<fruit> p) {
+    			
+    	
+    	p.stream()
+    	.sorted((o1,o2)->(o1.getcolor().compareTo(o2.getcolor())))
+    	.forEach(a->System.out.println(a.getname()+" "+a.getcalories()+" "+a.getcolor()+" "+a.getprice()));
+		return null;
+    }
+    public static ArrayList<fruit> filterRedSortPrice(List<fruit> p)
+    {
+    	
+    	p.stream()
+    	.filter(a->a.getcolor().equals("red"))
+    	.sorted((o1,o2)->(o1.getcalories()>(o2.getcalories())?1:-1))
+    	.forEach(a->System.out.println(a.getname()+" "+a.getcalories()+" "+a.getcolor()+" "+a.getprice()));
+		return null;
+    	
+    	
+    }
+    
+    
+    
+    
+    
+    
+    
+		public static void main(String[] args) throws IOException{
+		List<fruit> p = new ArrayList<fruit>();  
+			
+	    	p.add(new fruit("mango",100,50,"yellow"));
+	    	p.add(new fruit("apple",40,100,"red"));
+	    	p.add(new fruit("banana",10,10,"yellow"));
+	    	p.add(new fruit("promogranate",70,10,"red"));
+
+	    
+	    	reverseSort(p);
+	    	System.out.println("group");
+	    	sort(p);
+	    	
+	    	System.out.println("red color");
+	    	filterRedSortPrice(p);
+	    	
+	    	
+	}
+
+		
+			
+		}
+        
+
+
+	
+		
+		
+
+
+
+	
+

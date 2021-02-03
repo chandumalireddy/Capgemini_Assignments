@@ -1,0 +1,104 @@
+package stream;
+import java.io.IOException;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
+
+
+public class trader {
+		String name;
+		String city;
+			public trader(String name,String city)
+			{
+				this.name=name;
+				this.city=city;
+			}
+			public String getName() {
+				return name;
+			}
+			public void setName(String name) {
+				this.name = name;
+			}
+			public String getCity() {
+				return city;
+			}
+			public  void setCity(String city) {
+				this.city = city;
+			}
+			
+
+
+}
+
+
+
+public class assignment {
+
+  
+	  public static List<String> printUniqueCities(List <trader> traders) {
+		  
+		  List<String> a=(List<String>) traders.stream().map(p->p.getCity()).distinct().collect(Collectors.toList());
+		  return a;
+	  }
+
+	    public static List<String> tradersFromPuneSortByName(List<trader> traders) {
+	    	 List<String> a=new ArrayList<>();
+	    	 traders.stream().filter(p->p.getCity().equals("pune"))
+	    	 .forEach(e->a.add(e.getName()));
+	    	 Collections.sort(a);
+	    	 return a;
+	    	
+	    	
+	    	
+	    }
+	    public static List<String> allTrader3Names(List<trader> traders) {
+	    	 List<String> a=new ArrayList<>();
+	    	 traders.stream()
+	    	 .forEach(e->a.add(e.getName()));
+	    	 return a;
+	    	 
+	    }
+	    public static List<String> areAnyTradersFromIndore(List<trader> abc) {
+	    	
+	    	 List<String> a=new ArrayList<>();
+	    	 abc.stream()
+	    	 .filter(p->p.getCity().equals("indore"))
+	    	 .forEach(e->a.add(e.getName()));
+	    	 return a;
+	    	 
+	    	
+	    	
+	    	
+	    	
+	    }
+	
+	
+	    public static void main(String[] args) {
+	    	
+	    	
+	    trader t1=(new trader("chandu","hyderabad"));
+	    trader t2=(new trader("sekhar","indore"));
+	    trader t3=(new trader("srinu","pune"));
+	      	 trader t4=(new trader("raj","pune"));
+	    	List<trader>abc=new ArrayList<>();
+	    	abc.add(t1);
+	    	abc.add(t2);
+	    	abc.add(t3);
+	    	abc.add(t4);
+	    	
+	    	System.out.println(printUniqueCities(abc));
+	    	System.out.println(tradersFromPuneSortByName(abc));
+	    	System.out.println(allTrader3Names(abc));
+	    	System.out.println(areAnyTradersFromIndore(abc));
+	    	
+	    	
+	    }
+
+
+}
+	    

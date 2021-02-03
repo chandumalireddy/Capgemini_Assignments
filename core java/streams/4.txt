@@ -1,0 +1,139 @@
+package stream;
+import java.io.IOException;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
+public class transaction {
+		private trader trade;
+		int year;
+		int value;
+		public transaction(trader trade, int year, int value) {
+			super();
+			this.trade = trade;
+			this.year = year;
+			this.value = value;
+		}
+	public trader gettrade() {
+		return trade;
+	}
+		public int getYear() {
+			return year;
+		}
+		public void setYear(int year) {
+			this.year = year;
+		}
+		public int getValue() {
+			return value;
+		}
+		public void setValue(int value) {
+			this.value = value;
+		}
+}
+class Sorted implements Comparator<transaction>
+{
+	public int compare(transaction a,transaction b) {
+	return a.getValue()-b.getValue();
+}
+}
+
+
+	
+public class trader {
+		String name;
+		String city;
+			public trader(String name,String city)
+			{
+				this.name=name;
+				this.city=city;
+			}
+			public String getName() {
+				return name;
+			}
+			public void setName(String name) {
+				this.name = name;
+			}
+			public String getCity() {
+				return city;
+			}
+			public  void setCity(String city) {
+				this.city = city;
+			}
+			
+
+
+}
+
+
+public class assignment {
+
+  
+    	
+	
+	    public static List<transaction> sortTransactions(List <transaction> transactions) {
+	    	
+	    	List<transaction>a=new ArrayList<>();
+	    	transactions.stream().filter(p->p.getYear()==2011)
+	    	.forEach(l->a.add(l));
+	    	Collections.sort(a,new Sorted());
+	    	return a;
+	    	
+	    	
+	    }
+	    
+	    public static List<Integer> transactionsValuesDelhi(List<transaction> transactions) {
+	    	
+	    	List<Integer>a=new ArrayList<>();
+	    	transactions.stream().filter(p->p.gettrade().getCity().equals("delhi"))
+	    	.forEach(p->a.add(p.getValue()));
+	    	return a;
+	    	
+	    }
+	    
+	    public static int highestTransaction(List<transaction> transactions){
+	    	List<Integer>a=new ArrayList<>();
+	    	transactions.stream().forEach(e->a.add(e.getValue()));
+	    	
+	    	int m=a.stream().max(Comparator.comparing(i->i)).get();
+	    	
+	    	return m;
+	    }
+	    
+	    public static int smallestTransaction(List<transaction> transactions){
+	    	
+	    	List<Integer>a=new ArrayList<>();
+	    	transactions.stream().forEach(e->a.add(e.getValue()));
+	    	
+	    	int m=a.stream().min(Comparator.comparing(i->i)).get();
+	    	
+	    	return m;
+	    	
+	    }
+	    public static void main(String[] args) {
+	    	
+	    	
+	    	transaction t1=new transaction(new trader("chandu","hyderabad"),2015,1000000);
+	      	transaction t2=new transaction(new trader("sekhar","delhi"),2016,2000000);
+	      	transaction t3=new transaction(new trader("srinu","mumbai"),2011,7000000);
+	      	transaction t4=new transaction(new trader("raj","chennai"),2011,1500000);
+	    	List<transaction>abc=new ArrayList<>();
+	    	abc.add(t1);
+	    	abc.add(t2);
+	    	abc.add(t3);
+	    	abc.add(t4);
+	    	
+	    	System.out.println(sortTransactions(abc));
+	    	System.out.println(transactionsValuesDelhi(abc));
+	    	System.out.println(highestTransaction(abc));
+	    	System.out.println(smallestTransaction(abc));
+	    	
+	    	
+	    }
+
+
+}
+	    

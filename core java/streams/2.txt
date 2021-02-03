@@ -1,0 +1,148 @@
+package stream;
+import java.io.IOException;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
+
+
+package stream;
+
+public class news {
+		
+		int newsid;
+		String postedByUser;
+		String commentsByUser;
+		String comments;
+		
+		public news(int newsid, String postedByUser, String commentsByUser, String comments) {
+			super();
+			this.newsid = newsid;
+			this.postedByUser = postedByUser;
+			this.commentsByUser = commentsByUser;
+			this.comments = comments;
+		}
+
+		public int getNewsid() {
+			return newsid;
+		}
+
+		public void setNewsid(int newsid) {
+			this.newsid = newsid;
+		}
+
+		public String getPostedByUser() {
+			return postedByUser;
+		}
+
+		public void setPostedByUser(String postedByUser) {
+			this.postedByUser = postedByUser;
+		}
+
+		public String getCommentsByUser() {
+			return commentsByUser;
+		}
+
+		public void setCommentsByUser(String commentsByUser) {
+			this.commentsByUser = commentsByUser;
+		}
+
+		public String getComments() {
+			return comments;
+		}
+
+		public void setComments(String comments) {
+			this.comments = comments;
+		}
+		
+}
+
+
+
+
+public class assignment {
+
+  
+    	
+	  public static int maxComments(List<news> news) {
+		  
+		  int m=0;
+		  for(news a:news)
+		  {
+			  if(m<a.getComments().length())
+				  m=a.getComments().length();
+		  }
+		  return m;
+	  }
+
+	    public static int budgetCount(List < news > news) {
+	    	
+	    	int m=0;
+	    	for(news a:news)
+	    	{
+	    		if(a.getComments().contains("budget"))
+	    			m++;
+	    	
+	    	}
+	    	return m;
+	    }
+	    public static String maxCommentsByUser (List < news > news) {
+	    	
+	    	int m=0;
+	    	String b="";
+	    	for(news a:news)
+	    	{
+	    		if(m<a.getCommentsByUser().length())
+	    		{m=a.getCommentsByUser().length();
+	    		b=a.getCommentsByUser();
+	    		}
+	    		
+	    	}
+	    	return b;
+	    }
+
+	    public static Map<String, Integer> sortMaxCommentsByUser(List < news > news) {
+	    	
+	    	
+	    	HashMap<String,Integer>a=new HashMap<>();
+	    	Collections.sort(news,(o1,o2)->o1.getCommentsByUser().length()>o2.getCommentsByUser().length()?1:-1);
+	    	for(news b:news)
+	    		a.put(b.getPostedByUser(),b.getCommentsByUser().length());
+	    	return a;
+	    }
+
+	    public static void main(String[] args) {
+    
+    news n1=new news(1,"chandu","good morning","nice");
+    news n2=new news(2,"Lucky","adapt trainig","nice");
+    news n3=new news(3,"sekhar","java core assignment","nice");
+    news n4=new news(4,"raj","streams","nice");
+    
+    ArrayList<news>list=new ArrayList<>();
+    list.add(n1);
+    list.add(n2);
+    list.add(n3);
+    list.add(n4);
+    
+    System.out.println(maxComments(list));
+   
+    System.out.println(budgetCount(list));
+    System.out.println(maxCommentsByUser(list));
+    System.out.println(sortMaxCommentsByUser(list));
+    
+	
+	}
+
+		
+			
+		}
+        
+
+		
+
+	
+

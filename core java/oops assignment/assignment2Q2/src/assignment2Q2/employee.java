@@ -1,4 +1,3 @@
-
 package assignment2Q2;
 
 import java.util.ArrayList;
@@ -93,27 +92,4 @@ if(n==1)
     
     }
 
-}
-
-
-
-
-
-public class manager extends employee{
-	 static int totalsal=0;
-	 public int getSalary(int salary){
-
-	       int incentive = 5000;
-	       totalsal=salary+incentive;
-	     return totalsal;
-}
-}
-public class Labour extends employee{
-	static int totalsal=0;
-    public int getSalary(int salary) {
-    	 int overtime = 500;
-	     totalsal= salary+overtime;
-	     return totalsal;
-        
-    }
 }
