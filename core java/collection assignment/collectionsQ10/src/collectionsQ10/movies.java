@@ -1,8 +1,9 @@
-package assignment3Q10;
+package collectionsQ10;
 
-public class movies{
+public class movies {
+
 	
-	   private String movieName;
+	  private String movieName;
 	    private String actor;
 	    private String actress;
 	    private String genre;
@@ -46,3 +47,6 @@ public class movies{
 		
 
 }
+
+
+
