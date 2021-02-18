@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN"
+        "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+        
+      <beans> 
+  
+ <bean id="obj" class=" constructspring.customer">  
+<constructor-arg  value="1"  type="int"></constructor-arg>
+<constructor-arg  value="chandu" type="String"></constructor-arg>
+<constructor-arg  value="12345"  type="int"></constructor-arg>
+<constructor-arg>  <ref bean="a1"/></constructor-arg>
+
+</bean>  
+
+<bean id="a1" class="constructspring.address">  
+<constructor-arg  value="abc" type="String"></constructor-arg>  
+<constructor-arg  value="vij"  type="String"></constructor-arg>  
+<constructor-arg value="ap"  type="String"></constructor-arg>  
+<constructor-arg value="522252" type="int"></constructor-arg>  
+<constructor-arg  value="India" type="String"></constructor-arg>  
+</bean>
+</beans>  
