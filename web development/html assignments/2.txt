@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+
+<body>
+
+<p>click on the image</p>
+<a href="default.asp"><img src="image2.jpg" alt="generting link via image" style:"width:42px;height:42px"></a>
+ </body>
+</html>

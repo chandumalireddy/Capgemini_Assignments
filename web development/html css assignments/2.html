@@ -1,0 +1,83 @@
+<!DOCTYPE HTML>
+<html>
+
+
+<style>
+
+header{
+text-align:center;
+color:Blue;
+font-size:25px;
+}
+form{
+text-align:left;
+}
+
+label {
+  padding: 12px 12px 12px 0;
+  display: inline-block;
+}
+.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 80px;
+}
+
+</style>
+  <body>
+
+ <header>
+  <h1>  Skills Survey</h1>
+  </header>
+    <div class="container">
+ <form>
+
+<fieldset>
+<div class="row">
+  <label for="fname">First name:</label><br>
+  <input type="text" id="fname" name="fname" value="Fname"><br>
+</div>  <label for="lname">Last name:</label><br>
+  <input type="text" id="lname" name="lname" value="Lname"><br><br>
+  
+	<h4>Gender</h4><br>
+  <input type="radio" id="male" name="gender" value="male">
+  <label for="male">Male</label><br>
+  
+<input type="radio" id="female" name="gender" value="female">
+  <label for="female">Female</label><br>
+  <input type="radio" id="other" name="gender" value="other">
+  <label for="other">Other</label><br><br><br>
+
+ <label for="birthday"><h4>Birthday:</h4></label>
+  <input type="date" id="birthday" name="birthday">
+<br>
+<br>
+ <label for="email"><h4>Enter your email:</h4></label>
+  <input type="email" id="email" name="email" value="email">
+<br><br><br>
+
+<h4>Skills</h4>
+  <input type="checkbox" id="FrontEnd" name="FrontEnd" value="FrontEnd">
+  <label for="FrontEnd"> FrontEnd developer</label><br>
+  <input type="checkbox" id="Backend" name="Backend" value="Backend">
+  <label for="backend"> Backend developer</label><br>
+  <input type="checkbox" id="fullstack" name="fullstack" value="fullstack">
+  <label for="Fullstack"> fullstack java developer</label>
+<br>
+<br>
+
+ <label for="myfile">Upload your photo:</label>
+  <input type="file" id="myfile" name="myfile">
+<br><br>
+ <label for="homepage">Add your Linkedin id:</label>
+  <input type="url" id="homepage" name="homepage">
+<br>
+<br>
+<input type="submit">
+ <input type="reset">
+</fieldset>
+</form>  
+</div>
+ 
+  </body>
+</html>
