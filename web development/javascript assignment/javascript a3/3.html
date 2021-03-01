@@ -1,0 +1,13 @@
+class rectangle{
+constrcutor(height,weight){
+this.height=height;
+this.weight=weight;
+}
+}
+rectangle.prototype.area=function(){
+console.log(this.height*this.weight);
+}
+const r=new rectangle(5,5);
+console.log(r.height);
+console.log(r.weight);
+r.area();

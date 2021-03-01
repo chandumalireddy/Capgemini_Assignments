@@ -1,0 +1,15 @@
+var p={
+firstname:"chandu",
+lastname="sekhar"
+};
+
+p.getfullname=function()
+{
+console.log(this.firstname+" "+this.lastname);
+
+//updating 
+p.lastname="chandu";
+console.log(p.lastname);
+
+p.getfullname();
+
