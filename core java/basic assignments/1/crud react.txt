@@ -1,0 +1,60 @@
+import React, { Component } from "react";
+
+
+export default class App extends Component {
+  state = {
+    name: ["chandu", "sekhar"],
+    job:["IT","HR"],
+    isLoggedIn:false
+  };
+
+  saveInput = (e) => {
+    this.setState({ input: e.target.value });
+  };
+
+  addNewItem = () => {
+
+      this.setState({name: [...this.state.job, this.state.input]});
+    
+    this.setState({job: [...this.state.job, this.state.input]});
+    };
+  
+    delete(item){
+      let newData = this.state.name.filter( searchItem => searchItem.index !== item.index )
+      this.setState({
+          data: newData
+      
+    })}
+
+  render() {
+     
+    return (
+      <div>
+        <input
+          type="text"
+          onChange={this.saveInput}
+        />
+         <input
+          type="text"
+          onChange={this.saveInput}
+        />
+        <button onClick={this.addNewItem}> Add Item </button>
+       
+        )
+ 
+ <ol>
+          {this.state.name.map((subItems, sIndex) => {
+            return <li key={sIndex}> {subItems}</li>
+          })}
+      
+        </ol>
+        <ol>
+          {this.state.job.map((subItems, sIndex) => {
+            return <li key={sIndex}> {subItems}</li>
+          })}
+        </ol>
+        
+      </div>
+    );
+        }
+    }

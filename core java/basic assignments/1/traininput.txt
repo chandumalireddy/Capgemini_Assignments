@@ -1,0 +1,31 @@
+{
+"trainno":1234,
+"trainname":"abcd",
+"source":"hnt",
+"destination":"viz",
+"date":"30-04-2021",
+"startTime":"08.00",
+"reservationvacancy":[{
+
+"type":"1tier",
+"fare":6000,
+"reservations":25
+},
+{
+	"type":"2tier",
+"fare":4500,
+"reservations":30	
+},
+{
+	"type":"3tier",
+	"fare":2500,
+"reservations":40
+}]
+
+}
+
+
+
+//spring.data.mongodb.uri=mongodb+srv://chandu1:chandu@cluster0.zcyqh.mongodb.net/Casestudy
+
+
