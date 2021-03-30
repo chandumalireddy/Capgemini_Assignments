@@ -1,0 +1,4 @@
+<script type="text/javascript">
+  fourNums = [1, 3, 5, 7, "continue till hundred nos."];
+  console.log(fourNums);
+</script>
