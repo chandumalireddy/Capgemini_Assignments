@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN"
+        "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+        
+        
+        
+        <beans>
+        <bean id="obj"   class="bankapp1.bankaccount">
+        <property name="accountId" value="1"></property>
+        <property name="accountHolderName" value="chandu"></property>
+        <property name="accountType" value="svaings"></property>
+        <property name="accountBalance" value="10000000"></property>
+       
+        </bean></beans>
+        
