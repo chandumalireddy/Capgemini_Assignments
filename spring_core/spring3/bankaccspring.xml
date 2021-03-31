@@ -11,5 +11,20 @@
         <property name="accountType" value="svaings"></property>
         <property name="accountBalance" value="10000000"></property>
        
-        </bean></beans>
+       </bean>
+<bean id="bankAccountepositoryImpl" class="bankapp1.bankaccountepositoryimpl">
+
+</bean>
+
+<bean id="bankaccountServiceImpl" class="bankapp1.bankaccountserviceimpl">
+
+</bean>
+
+
+<bean id="bankAccountController" class="bankapp1.bankaccountcontroller">
+	<property name="bankAccountServiceImpl" ref="bankaccountServiceImpl"/>
+	<property name="bankAccountRepoImpl" ref="bankAccountepositoryImpl"/>
+</bean>
+       
+        </beans>
         
