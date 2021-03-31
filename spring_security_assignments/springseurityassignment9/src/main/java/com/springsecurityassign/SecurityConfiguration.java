@@ -31,20 +31,13 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter{
 	@Override
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
 		
-		// authentication using embedded database H2
 		
-		/*
-		 * auth.jdbcAuthentication().dataSource(dataSource).withDefaultSchema()
-		 * .withUser(User.withUsername("sagar").password("sagar").roles("USER"))
-		 * .withUser(User.withUsername("admin").password("admin").roles("ADMIN")) ;
-		 * 
-		 */
-		auth.inMemoryAuthentication().withUser("sagar")
-		.password("sagar")
+		auth.inMemoryAuthentication().withUser("chandu")
+		.password("chandu")
         .roles("USER")
         .and()
         .withUser("admin")
-        .password("$2a$09$9lq11vs9kR8HRp7cdRjCQuVNatbxcKCDd5bgS.HIh/jgh/7o5QM/q")
+        .password("$2a$10$y.OcCvDVDWWDa9mHt0lOO.gs.eAZmdVFEdGX1EANmoOv2gBVteLCG")
         .roles("ADMIN");
 		//auth.userDetailsService(userDetailsService);
 	}
@@ -60,7 +53,13 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter{
 		  						   .antMatchers("/user").hasAnyRole("USER","ADMIN")
 		  						   .antMatchers("/").permitAll()
 		  						   .and()
-		  						   .formLogin() ;
+		  						   .formLogin() .
+		  						   and()
+		  						 .rememberMe()  
+		  					      .key("rem-me-key")  
+		  					      .rememberMeParameter("remember")
+		  					      .rememberMeCookieName("rememberlogin") 
+		  					      .tokenValiditySeconds(100);
 		 
 	}
 	
