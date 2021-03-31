@@ -5,6 +5,7 @@ import javax.persistence.Entity;
 @Entity
 public class customer {
 	
+	private int id;
 	private String name;
 
 	public String getName() {
@@ -18,6 +19,14 @@ public class customer {
 	public customer(String name) {
 		super();
 		this.name = name;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
 	}
 
 

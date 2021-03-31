@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns = "http://www.springframework.org/schema/beans"
+   xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation = "http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans-4.0.xsd">
+
+ <bean id="engine" class="spring7.Engine">
+   <property name="capacity" value="3200"/>
+   <property name="horsePower" value="250"/>
+   <property name="numberOfCylinders" value="6"/>
+</bean>
+<bean id="someCar" class="spring7.Car">
+   <property name="make" value="Some make"/>
+   <property name="model" value="Some model"/>
+   <property name="engine" value="#{engine}"/>
+   <property name="horsePower" value="#{engine.horsePower}"/>
+</bean>
+<bean id="spelOperators" class="spring7.SpelOperators">
+   <property name="equal" value="#{1 == 1}"/>
+   <property name="notEqual" value="#{1 lt 1}"/>
+   <property name="greaterThanOrEqual" value="#{someCar.engine.numberOfCylinders >= 5}"/>
+   <property name="and" value="#{someCar.horsePower == 300 and someCar.engine.capacity lt 2000}"/>
+   <property name="or" value="#{someCar.horsePower > 400 or someCar.engine.capacity > 2000}"/>
+   <property name="addString" value="#{someCar.model + ' manufactured by ' + someCar.make}"/>
+</bean>
+   
+
+</beans>

@@ -35,4 +35,9 @@ userrepo e;
 		e.save(e1);
 		
 	}
+
+	public user getname(String name) {
+		
+	return e.findByname(name);
+	}
 }

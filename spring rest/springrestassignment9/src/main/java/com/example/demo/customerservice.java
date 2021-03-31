@@ -3,6 +3,7 @@ package com.example.demo;
 import java.util.ArrayList;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -32,6 +33,17 @@ public class customerservice {
 			cust.save(e);
 			
 		}
+
+	public Optional<customer> getid(int id) {
+	
+		return cust.findById(id);
+	}
+
+	public void delete(int id) {
+		cust.deleteById(id);
+	}
+
+	
 		
 	}
 
