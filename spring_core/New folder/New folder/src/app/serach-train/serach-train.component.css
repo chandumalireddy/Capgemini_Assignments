@@ -1,0 +1,129 @@
+.button {
+    position: relative;
+    background-color:white;
+    border: none;
+    font-size: 28px;
+    color: green;
+    padding: 5px;
+    width: 300px;
+    text-align: center;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    text-decoration: none;
+    overflow: hidden;
+    cursor: pointer;
+    margin: 30px;
+  }
+
+
+  .box1 {
+    padding-right:50px;
+    background-color: skyblue;
+    width: 1000px;
+
+justify-content: center;
+    padding: 15px;
+    margin: 5px;
+  }
+
+  
+  .button:after {
+    content: "";
+    background: #90EE90;
+    display: block;
+    position: absolute;
+    padding-top: 200%;
+    padding-left: 350%;
+   
+
+    opacity: 0;
+    transition: all 0.8s
+  }
+  
+  .button:active:after {
+    padding: 0;
+    margin: 0;
+    opacity: 1;
+    transition: 0s
+  }
+
+  .b {
+    position: relative;
+    background-color:rgb(11, 38, 39);
+    border: none;
+    font-size: 28px;
+    color: #FFFFFF;
+    padding: 5px;
+    width: 180px;
+    text-align: center;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    text-decoration: none;
+    overflow: hidden;
+    cursor: pointer;
+    margin: 30px;
+  }
+  
+  .b:after {
+    content: "";
+    background: #90EE90;
+    display: block;
+    position: absolute;
+    padding-top: 150%;
+    padding-left: 200%;
+   
+
+    opacity: 0;
+    transition: all 0.8s
+  }
+  
+  .b:active:after {
+    padding: 0;
+    margin: 0;
+    opacity: 1;
+    transition: 0s
+  }
+
+
+  .box {
+    background-color:lavenderblush;
+    width: 1000px;
+
+justify-content: center;
+    padding: 15px;
+    margin: 5px;
+  }
+  .boxx {
+    background-color:blue;
+    width: 300px;
+
+    padding: 5px;
+    margin: 5px;
+  }
+  .center {
+    margin: auto;
+    width: 70%;
+    
+    
+    padding: 10px;
+  }
+  .float{
+    display: flex;
+    justify-content: left;
+  }
+
+  .abc{
+    background-color:rgb(7, 7, 80);
+  }
+
+  .search{
+    display: flex;
+    justify-content: center;
+  }
+  input[type=text] {
+    width: 60%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    border: 2px solid green;
+  }
+ 

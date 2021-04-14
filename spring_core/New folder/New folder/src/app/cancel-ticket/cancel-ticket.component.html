@@ -1,0 +1,27 @@
+
+ 
+      <div *ngFor="let a of  booking">
+        <div class="box">
+        <div>{{a.pnr}}</div>
+       <div>{{a.username}}</div>
+       <div>{{a.trainname}}</div> 
+       <div>{{ a.source}}</div>
+       <div>{{ a.destination}}</div>
+   <div>{{a.reservationtype}}</div>
+  
+  
+    <div *ngFor="let b of  a.passengers">
+      <div class="b">
+
+      <div>{{b.name}}</div>
+     <div>{{b.age}}</div>
+     <div>{{b.gender}}</div>
+     <div>{{b.city}}</div> 
+     <div>{{b.seatNo}}</div>
+     </div>
+    </div>
+    </div>
+     
+    
+    
+  
