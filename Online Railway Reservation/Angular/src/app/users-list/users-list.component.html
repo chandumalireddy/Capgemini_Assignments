@@ -1,0 +1,89 @@
+
+
+
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+    
+      
+      <!-- Links -->
+      <ul class="navbar-nav">
+       
+        <li class="nav-item">
+            <a class="nav-link"  routerLink='/adminmenu/addtrain' routerLinkActive="active">Add Train</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link"   routerLink='/adminmenu/deletetrain' routerLinkActive="active">Delete Train</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link"   routerLink='/adminmenu/admin' routerLinkActive="active">Tickets</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link"   routerLink='/adminmenu/userslist' routerLinkActive="active">Users</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link"   routerLink='/adminmenu' routerLinkActive="active">admin Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link"   routerLink='/' routerLinkActive="active">Logout</a>
+          </li>
+      </ul>
+    </nav>
+
+<div>
+<input #user type="text" name="username" placeholder="username">
+<div>
+  
+<button class="btn btn-secondary" (click)=" getuserbyname(user.value)">Search by userName</button>
+</div>
+<div class="abc">
+<table >
+    <thead>
+      <tr>
+     
+        <th scope="col">pnr</th>
+        <th scope="col">userId</th>
+        <th scope="col">trainName</th> 
+        <th scope="col">source</th> 
+        <th scope="col">destination</th> 
+        <th scope="col">date</th>  
+        <th scope="col">Passenger    Details</th> 
+        </tr>
+        <tr>   
+        <th scope="col"></th>
+        <th scope="col"></th>
+        <th scope="col"></th> 
+        <th scope="col"></th> 
+        <th scope="col"></th> 
+        <th scope="col"></th>  
+        <th scope="col">Name Age gen SeatNo</th>     
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let a of  booking">
+        <td>{{a.pnr}}</td>
+       <td>{{a.username}}</td>
+       <td>{{a.trainname}}</td> 
+       <td>{{ a.source}}</td>
+       <td>{{ a.destination}}</td>
+       <td>{{ a.date}}</td>
+    <td>
+        <tr *ngFor="let b of  a.passengers">
+            <td>{{b.name}}</td>
+           <td>{{b.gender}}</td>
+           <td>{{b.age}}</td> 
+           <td>{{b.seatNo}}</td> 
+           </tr>
+    </td>
+    <button  type="button" (click)="delticket(a.pnr)" class="btn btn-danger ">delete</button>
+      </tr>
+    </tbody>
+  </table>
+</div>
+  
+  
+  
+  
+  
+  
+  
+  
+  
