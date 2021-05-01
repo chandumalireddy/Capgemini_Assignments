@@ -1,0 +1,46 @@
+body{
+    
+
+
+    background-color: #DCDCDC;
+    height: 1500px;
+  
+    }
+      
+  .box{
+      margin: 10px;
+      padding-left: 100px;
+      padding-right: 100px;
+      background-color: silver;
+  }
+  
+  .box{
+    width: 1000px;
+
+ padding: 15px;
+ 
+ margin-left: 200px;
+ 
+ background-color: 	#F8F8F8
+
+
+}
+.abc{
+ width: 800px;
+padding: 15px;
+
+max-width: 700px;
+width: 100%;
+background-color: white;
+margin: auto;
+border-radius:5px;
+padding-top: 100px;
+margin-top: 25px;
+
+justify-content: center;
+
+}
+.float{
+    display: flex;
+    justify-content: left;
+  }

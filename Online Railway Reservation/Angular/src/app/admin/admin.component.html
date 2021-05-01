@@ -1,0 +1,89 @@
+
+
+
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+    
+      
+      <!-- Links -->
+      <ul class="navbar-nav">
+       
+        <li class="nav-item">
+            <a class="nav-link"  routerLink='/adminmenu/addtrain' routerLinkActive="active">Add Train</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link"   routerLink='/adminmenu/deletetrain' routerLinkActive="active">Delete Train</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link"   routerLink='/adminmenu/admin' routerLinkActive="active">Tickets</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link"   routerLink='/adminmenu/userslist' routerLinkActive="active">Users</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link"   routerLink='/adminmenu' routerLinkActive="active">admin Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link"   routerLink='/' routerLinkActive="active">Logout</a>
+          </li>
+      </ul>
+    </nav>
+
+<body>
+  <br>
+  <br>
+  <br>
+<div class="abc">
+  <input #trainSource1 type="text" name="trainSource" placeholder=" TrainName">
+
+  <div>
+  <input #trainDate type="date" data-date-format="YYYY MM DD" name="date" placeholder="date">
+  </div>
+  <br><br><br>
+  <div>
+    <button  class="btn btn-success btn-lg" (click)= "passengerticket(trainSource1.value,trainDate.value)">Search </button>
+
+  </div>
+  <br><br>
+  </div>
+  <br>
+   
+        <div *ngFor="let a of  booking">
+          <div class="center">
+            <div class="box">
+          <div style="font-size: large;">{{a.pnr}}</div>
+         <div style="font-size: large;">{{a.trainname}}</div> 
+         <div style="display: flex;justify-content: center;"><p style="font-size: 30px;word-spacing: 200px;">{{a.source}} &#8594; {{a.destination}}</p></div>
+         <div style="font-size:xx-large;margin-left:80%;">{{a.date}}</div>
+         <div style="font-size:xx-large;margin-left:80%;">{{a.reservationtype}}</div>
+  <table style="width:100%">
+    <thead>
+      <tr>
+     
+        <th scope="col">Name</th>
+        <th scope="col">gender</th>
+        <th scope="col">age</th>            
+        <th scope="col">SeatNo</th>      
+      </tr>
+    </thead>
+  
+    <tbody>
+      <tr *ngFor="let b of  a.passengers">
+        <td>{{b.name}}</td>
+       <td>{{b.gender}}</td>
+       <td>{{b.age}}</td> 
+       <td>{{ b.seatNo}}</td>
+     
+    
+      
+      </tr>
+    </tbody>
+      </table>
+   <button (click)="update(a)">update Reservation</button>
+      </div>
+    </div>
+    <hr>
+  </div>
+
+  </body>
+     
+  
