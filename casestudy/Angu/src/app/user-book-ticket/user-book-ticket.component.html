@@ -1,0 +1,65 @@
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+    
+      
+  <!-- Links -->
+  <ul class="navbar-nav">
+   
+    <li class="nav-item">
+        <a class="nav-link"  routerLink='/userMenu/viewtrains' routerLinkActive="active">Cancel Ticket</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link"   routerLink='/userMenu/cancelticket' routerLinkActive="active">Previous Booking</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link"   routerLink='/userMenu/cancelticket' routerLinkActive="active">PNR Status</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link"   routerLink='/userMenu' routerLinkActive="active">User Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link"   routerLink='/' routerLinkActive="active">Logout</a>
+      </li>
+     </ul>
+</nav>
+
+
+
+  <div style="background-color: lightgray;">
+    <div *ngFor="let a of  booking">
+      <div class="center">
+        <div class="box" style="height: auto;">
+      <div style="font-size: large;">{{a.pnr}}</div>
+     <div style="font-size: large;">{{a.trainname}}</div> 
+     <div style="display: flex;justify-content: center;"><p style="font-size: 30px;word-spacing: 200px;">{{a.source}} &#8594; {{a.destination}}</p></div>
+     <div style="font-size:xx-large;margin-left:80%;">{{a.date}}</div>
+   
+<table style="width:100%">
+<thead>
+  <tr>
+ 
+    <th scope="col">Name</th>
+    <th scope="col">gender</th>
+    <th scope="col">age</th>            
+    <th scope="col">SeatNo</th>      
+  </tr>
+</thead>
+
+<tbody>
+  <tr *ngFor="let b of  a.passengers">
+    <td>{{b.name}}</td>
+   <td>{{b.gender}}</td>
+   <td>{{b.age}}</td> 
+   <td>{{ b.seatNo}}</td>
+ 
+
+  
+  </tr>
+</tbody>
+  </table>
+  <button  type="button" (click)="delticket(a.pnr)" class="btn btn-danger btn-lg">Cancel Ticket</button>
+  </div>
+</div>
+</div>
+</div>
+
+ 

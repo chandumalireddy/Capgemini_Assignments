@@ -1,0 +1,33 @@
+
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+th, td {
+  padding: 15px;
+}
+.selected { 
+  border:  4px black;
+  margin: 3px;
+}
+*::before,*::after{
+  margin:0;
+  padding:0;
+  box-sizing: inherit;
+}
+
+body{
+  height: 1500px;
+  
+
+  padding: 10px;
+  background: linear-gradient(135deg,#71b7e6,#9b9b9b);
+}
+.accordion{
+  border-radius: .4rem;
+  border-bottom:1rem;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  border-style: inset;
+  background-color: white;
+}

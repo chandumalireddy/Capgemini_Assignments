@@ -1,0 +1,70 @@
+
+
+
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+    
+      
+      <!-- Links -->
+      <ul class="navbar-nav">
+       
+        <li class="nav-item">
+            <a class="nav-link"  routerLink='/adminmenu/addtrain' routerLinkActive="active">Add Train</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link"   routerLink='/adminmenu/deletetrain' routerLinkActive="active">Delete Train</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link"   routerLink='/adminmenu/admin' routerLinkActive="active">Tickets</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link"   routerLink='/adminmenu/userslist' routerLinkActive="active">Users</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link"   routerLink='/' routerLinkActive="active">Logout</a>
+          </li>
+      </ul>
+    </nav>
+
+<body>
+ 
+<p style="font-size: xx-large; color: red;padding-left: 1200px;">Total Trains Count  {{a}}</p>
+<p style="font-size: larger;padding-left: 120px;color:black">Recently Added Train</p> 
+      <div *ngFor="let a of train1">
+        <div class="center">
+          <div class="box">
+          <div style="font: size 25px;;margin-left:80%;">{{ a.date}}</div>
+          <div style="font-size:25px;"><b>{{a.trainNo}}</b></div>
+          <div style="font-size:25px;"><b>{{a.trainName}}</b></div>
+        
+          <div style="padding-left: 450px;font-size: 25px;">{{a.duration}}h</div> 
+             <div style="display: flex;justify-content: center;"><p style="font-size: 30px;word-spacing: 200px;">{{a.source}} &#8594; {{a.destination}}</p>
+        </div>
+           <div style="padding-left: 220px;font-size: 25px;word-spacing: 350px">{{a.arrivalTime}} {{a.destinationTime}}</div>
+            <div style="padding-left: 220px ; font-size: 25px;">{{a.departureTime}}</div>
+      
+      
+      
+      
+        <div class="float">
+          <div *ngFor="let b of  a.reservationVacancy">
+          
+            <p>{{b.type}}</p>
+            <hr>
+           
+            <p> &#x20B9;{{b.fare}}</p>
+          
+            <hr>
+          <p style="color: green;" >Avaiable  {{b.reservations}} </p>
+        </div>
+          </div>
+        </div>
+        </div>
+          
+         
+          
+      
+      </div>
+        
+      
+    
+  </body>
