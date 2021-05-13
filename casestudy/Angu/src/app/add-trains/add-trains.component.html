@@ -1,0 +1,130 @@
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+    
+      
+  <!-- Links -->
+  <ul class="navbar-nav">
+   
+    <li class="nav-item">
+        <a class="nav-link"  routerLink='/adminmenu/addtrain' routerLinkActive="active">Add Train</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link"   routerLink='/adminmenu/deletetrain' routerLinkActive="active">Delete Train</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link"   routerLink='/adminmenu/admin' routerLinkActive="active">Tickets</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link"   routerLink='/adminmenu/userslist' routerLinkActive="active">Users</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link"   routerLink='/adminmenu' routerLinkActive="active">admin Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link"   routerLink='/' routerLinkActive="active">Logout</a>
+      </li>
+  </ul>
+</nav>
+
+<body >
+  
+<div class="container">
+  <div class=" title">Add Train</div>
+    <form  [formGroup]="registrationform" (ngSubmit)="onsubmit()">
+  
+  
+    
+    <div class="user-details">
+    
+  <div class="form-group">
+    <label>trainno</label>
+    <input formControlName="trainNo"  type="text" class="form-control">
+  </div>
+  <div class="form-group">
+    <label>trainname</label>
+    <input formControlName="trainName" type="text" class="form-control">
+  </div>
+  
+  <div class="form-group">
+    <label>source</label>
+    <input formControlName="source" type="text" class="form-control">
+  </div>
+  <div class="form-group">
+    <label>destination</label>
+    <input formControlName="destination" type="text" class="form-control">
+  </div>
+  <div class="form-group">
+    <label>date</label>
+    <input formControlName="date" type="date" class="form-control">
+  </div>
+  <div class="form-group">
+    <label>arrivalTime</label>
+    <input formControlName="arrivalTime" type="time" class="form-control">
+  </div>
+  <div class="form-group">
+    <label>departureTime</label>
+    <input formControlName="departureTime" type="time" class="form-control">
+  </div>
+  <div class="form-group">
+    <label>duration</label>
+    <input formControlName="duration" type="text" class="form-control">
+  </div>
+  <div class="form-group">
+    <label>destinationTime</label>
+    <input formControlName="destinationTime" type="time" class="form-control">
+  </div>
+  
+  
+
+ 
+  
+  
+  <div class="container">  <div formArrayName="reservationVacancy">
+    <div *ngFor="let c of vacancy.controls; let i=index">
+  <div [formGroupName]="i">
+    
+    <div class="user-details">
+    <label>type</label>
+    <input formControlName="type" type="text" class="form-control">
+  </div>
+  
+    <div class="user-details">
+    <label>Avaialable</label>
+    <input formControlName="reservations" type="text" class="form-control">
+  </div>
+    <div class="user-details">
+    <label>fare</label>
+    <input formControlName="fare" type="text" class="form-control">
+   
+  
+  </div>
+  <button type="button" (click)="addvacanyc()">Add</button>
+  </div>
+  </div>
+  </div>
+</div>
+<div class="container">
+  <div formArrayName="stops">
+    <div *ngFor="let c of stops.controls; let i=index">
+  <div [formGroupName]="i">
+    <div class="user-details">
+    <label>Stops</label>
+    <input formControlName="stationName" type="text" class="form-control">
+  </div>
+    <button type="button" (click)="addStops()">Add</button>
+  
+  </div>
+  </div>
+</div>
+  </div>
+
+
+  <button class="btn btn-primary"  type="submit">add</button>
+</div>
+</form>
+</div>
+
+  <br>
+  <div>
+  <button (click)="logout()" class="btn btn-light">Logout</button>
+</div>
+

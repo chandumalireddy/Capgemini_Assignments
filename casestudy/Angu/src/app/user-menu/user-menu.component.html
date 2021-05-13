@@ -1,0 +1,94 @@
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+    
+      
+  <!-- Links -->
+  <ul class="navbar-nav">
+   
+    <li class="nav-item">
+        <a class="nav-link"  routerLink='/userMenu/viewtrains' routerLinkActive="active">Cancel Ticket</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link"   routerLink='/userMenu/cancelticket' routerLinkActive="active">Previous Booking</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link"   routerLink='/userMenu/cancelticket' routerLinkActive="active">PNR Status</a>
+      </li>
+      <li class="nav-item">
+      <button  type="button" (click)="logout()" class="btn btn-danger btn-lg">Log Out</button>
+    </li> </ul>
+</nav>
+<div class="img">
+
+<div style="padding-left: 120px;background-color: rgb(6, 6, 53);padding-bottom: 30px;padding-top: 30px;">
+<div class="box">
+    <div class="row">
+        <h1>Book Ticket</h1>
+        <div class="column">
+            <label>From</label>
+   <div> <input #trainSource1 type="text" name="trainSource" placeholder="Please Enter Source"></div>
+   <p style="padding-left: 120px;font-size: 30px;">&#x2193;</p>
+   <label>To</label>
+    <div>    <input #trainDestination1 type="text" name="trainDestination" placeholder="please Enter Destination"></div>
+</div>
+<div class="column">
+    <label>date</label>
+    <div>  <input #trainDate type="date"  [min]="minDate | date:'yyyy-MM-dd'" name="date" placeholder="date"></div>
+    <label>Class</label>
+    <div>  <input #trainDate type="search" name="date" placeholder="Class"></div>
+    
+</div>
+  
+</div>
+<div style="padding-left: 400px;">
+<button  class="btn btn-success btn-lg" (click)= "getTrainFromSourceToDestinationWithDate(trainSource1.value,trainDestination1.value,trainDate.value)">Search </button>
+</div>
+</div>
+    
+</div>
+
+
+
+
+
+
+
+
+<div style="background-color: lightgray;">
+    <div *ngFor="let a of  train">
+    <div class="center">
+      <div class="box">
+        <div style="font-size:40px;"><b>{{a.trainNo}}</b></div>
+        <div style="font-size:40px;"><b>{{a.trainName}}</b></div>
+        <div style="font-size:xx-large;margin-left:80%;">{{ a.date}}</div>
+       
+           <div style="display: flex;justify-content: center;"><p style="font-size: 30px;word-spacing: 200px;">{{a.source}} &#8594; {{a.destination}}</p>
+      </div>
+         <div style="padding-left: 240px;font-size: 25px;">{{a.arrivalTime}}</div>
+          <div style="padding-left: 240px ; font-size: 25px;">{{a.departureTime}}</div>
+      <div class="float">
+        <div *ngFor="let b of  a.reservationVacancy">
+        <div>
+          <div>{{b.type}}</div>
+          <hr>
+         <div>
+          <p> &#x20B9;{{b.fare}}</p></div>
+         <div>
+          <hr>
+          <button  class="btn btn-light btn-sm" (click)="book(a.trainName,a.source,a.destination,a.date,b.type,b.fare)"><p style="color: green;" >Avaiable  {{b.reservations}} </p></button> 
+          </div> 
+         
+        </div>
+      </div>
+        </div>
+      
+        
+        
+        </div>
+      
+      </div>
+    
+    </div>
+  
+      </div>
+    
+    </div>
