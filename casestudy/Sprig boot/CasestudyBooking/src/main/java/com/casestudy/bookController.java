@@ -87,7 +87,7 @@ public class bookController {
 		passenger.setSeatNo(seat);
 			}
 		}
-		service.sendmail();
+		
 		return service.add(book);	
 	}
 	/**********
